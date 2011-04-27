@@ -1,0 +1,56 @@
+" FileName: getafe.penta
+" Author: l3x
+" Last Updated: Sat 12 Fev 2011 13:16:00 PM CST
+hi Cmd background-color:#1B1D1E; font-size:9pt; 
+hi -a StatusLineNormal      color:#f6f3e8; background-color:#1B1D1E !important; margin-bottom:-2px; font-size:9pt;font-family: monospace;
+
+hi -l StatusLineNormal StatusLineSecure         color:#1E90FF;
+hi -l StatusLineNormal StatusLineBroken         color:#FFFF00;
+hi -l StatusLineNormal StatusLineExtended       color:#a0ffa0;
+hi -a String                color:#FF1E98;
+hi -a Boolean               color:#099AC5;
+hi -a Function              color:#ADF700;
+hi -a Number                color:#FF5600;
+hi WarningMsg            color:#1B1D1E; background-color:#FF1E98 !important; font-weight:bold;
+hi -l WarningMsg StatusWarningMsg
+hi -l WarningMsg CmdWarningMsg
+hi ErrorMsg              color:#1B1D1E !important; background-color:#FF5600 !important; font-size:9pt;
+hi -l ErrorMsg StatusErrorMsg
+hi -l ErrorMsg CmdErrorMsg
+hi -a ModeMsg               color:#1B1D1E; background-color:#FFFF00 !important;
+hi -l ModeMsg StatusModeMsg
+hi -l ModeMsg CmdModeMsg
+hi -a MoreMsg               color:#7F7F7F !important; background-color:inherit !important; font-weight:bold;
+hi -l MoreMsg StatusMoreMsg
+hi -l MoreMsg CmdMoreMsg
+hi -l Cmd InfoMsg               color:#cccccc !important;
+hi -l InfoMsg StatusInfoMsg
+hi -l InfoMsg CmdInfoMsg
+hi Question              color:#F8FFFA !important; background-color:inherit !important; font-weight:bold;
+hi -l Question StatusQuestion
+hi -l Question CmdQuestion
+hi -a Tag                   color:#FF5600; font-weight:bold;
+hi -a CmdLine               font-weight:normal; padding:0 3px;
+hi -a NonText               color:#688399;
+hi Normal                color:#dcdccc !important; background-color:#1B1D1E !important; font-size:9pt;
+hi -l Normal CmdNormal
+hi -l Normal StatusNormal
+hi -a Title                 color:#efefef; background-color:inherit;
+hi -a CompItem[selected]    background-color:#121314 !important;
+hi -a CompMore              margin-bottom:0;margin-top:.5ex;
+" hi -a CompMore::after       content:"﹀"
+hi -a CompLess              margin-top:.5ex;margin-bottom:1ex;
+" hi -a CompLess::after       content:"︿"
+hi -a CompTitle             color:#F8FFFA; background-color:#01B0F0; font-size:8pt; font-weight:bold;
+hi -a CompTitleSep          background:#1B1D1E; height:0px;
+hi -a Filter                font-style:normal;
+hi -a Keyword               color:#FFFFFF;
+hi -a URL                   text-decoration:none; color:#688399; background-color:inherit;
+hi -a URL:hover             text-decoration:underline; cursor: pointer;
+hi -a LineNr                color:#688399; background-color:#000000;
+
+" plugin styles
+hi -a BufTabSelected        color:#FFA500; background-color:#121314; padding:0 4px; font-weight:bold;
+hi -a BufTabs               margin:0 4px; overflow:hidden;
+hi -a BufTab                padding:0 2px;
+" vim: set ft=pentadactyl:ts=4:sw=4:tw=0:
