@@ -15,6 +15,4 @@
 #The original getafe color scheme can be found at:
 
     https://github.com/larssmit/getafe
-or
-    http://www.vim.org/scripts/script.php?script_id=3445
 
