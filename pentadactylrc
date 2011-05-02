@@ -12,7 +12,83 @@ set! devtools.errorconsole.enabled=true
 
 group user
 map -modes=n,v <F12> :set<Space>guioptions+=mT<Return>
+
 " BufTab options ---
-set buftabs-showicons
+"set buftabs-showicons
+map -modes=n,v <F3> :set<Space>nobuftabs<Return>
+
+" Edit rc file
+cmap <Leader>rc :!gvim $HOME/.pentadactylrc
+
+highlight TabIconNumber color: #C6C5FE; font-weight: bold; font-size:12px;
+highlight TabIcon padding: 0px;
+highlight TabText font-size: 12px;
+
+style -name tab chrome://* <<EOM
+
+.tabbrowser-tab {
+    font-family: "monospace" !important;
+    color: #688399 !important;
+    height: 14px !important;
+    padding: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    background-image:none !important;
+    background-color: #1B1D1E !important;
+}
+
+/*
+ *.tabbrowser-tab .tab-text:before {
+ *    content:"[" !important;
+ *}
+ *.tabbrowser-tab .tab-text:after {
+ *    content:"]" !important;
+ *}
+ */
+
+/*.tabbrowser-tab[selected=false] > .tab-text { color: #688399 !important; }*/
+.tabbrowser-strip { background: #00BFF8 !important; }
+.tabbrowser-tab[selected=false] { background: #1B1D1E !important; }
+.tabbrowser-tab[selected=true] { background: #121314 !important; }
+.tabbrowser-tab[selected=true] .tab-text {
+    color: #FFA500 !important;
+    }
+
+#content tab:not([selected]) { background-color: #1B1D1E !important; }
+
+EOM
+
+style -name 'tab buttons' chrome://* <<EOM
+.tabs-newtab-button,
+#new-tab-button,
+#alltabs-button,
+#tabview-button,
+#tabs-closebutton,
+.tab-close-button {visibility: collapse;}
+EOM
+
+style -name tabsplitter chrome://* <<EOM
+.treestyletab-splitter { visibility: collapse !important; }
+EOM
+
+style -name bookmarkbar chrome://* <<EOM
+.toolbarbutton-icon {
+  height: 18px !important;
+}
+EOM
+
+
+" Show the Feed and Bookmark buttons on the statusbar
+javascript <<EOF
+(function(){
+    var statusPanel = document.createElement("statusbarpanel");
+    statusPanel.setAttribute("id", "buttons-panel-clone");
+    statusPanel.appendChild(document.getElementById("feed-button"));
+    statusPanel.appendChild(document.getElementById("star-button"));
+    statusPanel.firstChild.setAttribute("style", "padding: 0; max-height: 22px;");
+    document.getElementById("status-bar")
+            .insertBefore(statusPanel, document.getElementById("security-button"));
+})();					
+EOF
 
 " vim: set ft=pentadactyl:
